@@ -22,14 +22,25 @@
 					i : 입력모드 ,esc : 입력모드 빠져나오기, wq : 저장종료
 		git commit -m 'message' : commit을 하고 commit에 대한 간단한 메세지를 남긴다.
 		commit 내역은 git log 명령어를 통해 확인 가능
+		git reflog 모든 내역 다 나옴
 		
 5. 파일 특정 commit 지점으로 되돌리기 
 	git reset --soft <되돌릴 commit> : commit 내역을 되돌리고 commit만 취소(Staging area에 파일이 남아있다)
 	git reset --mixed <되돌릴 commit> : commit 내역을 되돌리고 statging area 까지 취소
 	git reset --hard <되돌릴 commit> : commit 내역을 되돌리고 파일을 rollback
-	
+	git rever <되돌릴 commit> : 파일을 rollback, revert 내역을 추가
 	
 							
-
+6. 파일을 원격 repository(github)로 올리기 
+	git remote add origin <github repository 주소>
+	git pull --allow-unrelated-histories origin main
+		원격 저장소의 ignore 파일과 readme 파일을 당겨온다 
+			--allow-unrelated-histories : 공통 조상을 공유하지 않는 기록병합을 허용 
+	git push -u origin main 
+			u : push 할 기본 원격 저장소의 브랜치를 기억, 앞으로는 원격 저장소와 브랜치를 작성하지 않아도 된다. 
+			
+			
+			
+	
 							
 								
